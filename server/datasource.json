@@ -1,0 +1,11 @@
+{
+  "db": {
+    "host": "10.69.0.155",
+    "port": 3306,
+    "database": "projectpuzzle",
+    "password": "",
+    "name": "db",
+    "user": "PP",
+    "connector": "mysql"
+  }
+}
