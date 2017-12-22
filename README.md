@@ -1,53 +1,53 @@
 # Project_Puzzle
 
-outils requis:
+## Outils requis:
 
   - NodeJS (https://nodejs.org/en/download/)
   - npm (normalement installé en même temps que nodejs)
-  - wampserver (ou tout autre serveur de database SQL)
+  - WampServer (http://www.wampserver.com/ ou tout autre serveur de database SQL)
 
-après téléchargement du projet:
+## Après téléchargement du projet
 
-  à taper n'importe où:
-  - npm install @angular/cli -g
+###  À taper n'importe où
+  - `npm install @angular/cli -g`
+  
+Cette commande installe angular-cli en général sur la machine
 
-  Installe angular-cli en général sur la machine
+###  Aller dans le répertoire `client`
+  - Lancer la commande `npm install`
 
-  aller dans le répertoire client:
-  - npm install
+  Cette commande installe toutes les dépendances nécessaires au projet
 
-  Installe toutes les dépendances nécessaires au projet
+###  Aller dans le répertoire `server`
+  - Lancer la commande `npm install`
 
-  aller dans le répertoire server:
-  - npm install
+  Cette commande installe toutes les dépendances nécessaires au projet
 
-  Installe toutes les dépendances nécessaires au projet
+### Serveur SQL
+  - Lancer le serveur de database SQL
+  - Créer un compte utilisateur pour l'application
+  - Créer une base de donnée 'projectpuzzle'
 
-  lancer le serveur de database SQL et créer un compte utilisateur pour l'application ainsi qu'une base de donnée 'projectpuzzle'.
+### Fichier datasources.json
+  - Renommer le fichier datasources.exemple en datasources.json
+  - Modifier `host` selon l'adresse IP du serveur SQL
+  - Modifier `port` selon celui du serveur SQL
+  - Modifier `user` et `password` selon ceux du compte que vous avez créé pour l'application
 
-  ensuite renommer le fichier datasources.exemple en datasources.json.
+### Création des tables 
+  Se rendre dans le dossier `server` puis lancer la commande :
+  - `node create-lb-tables.js`
 
-  modifier 'host' selon l'adresse IP du serveur SQL
+  Cette commande crée toutes les tables nécessaires dans la base de donnée
+  
+### Lancer l'application
+  - Vérifier que le serveur de base de donnée est bien allumé
+  - Aller dans le dossier `server` puis lancer la commande :
+    - `node server.js`
+    
+Cette commande lance le serveur
 
-  modifier 'port' selon celui du serveur SQL
+  Une fois le serveur démarré, aller dans le dossier `client` puis lancer la commande :
+  - `ng serve`
 
-  modifier 'user' et 'password' selon ceux du compte que vous avez créé pour l'application
-
-  dans server:
-  - node create-lb-tables.js
-
-  Crée toutes les tables nécessaires dans la base de donnée
-
-pour faire tourner l'application:
-
-  vérifier que le serveur de base de donnée est bien allumé
-
-  aller dans le serveur:
-  - node server.js
-
-  lance le serveur
-
-  aller dans le client APRES QUE LE SERVEUR AIT DEMMARE
-  - ng serve
-
-  lance le client et le redémarre automatiquement à chaque modification des fichiers
+  Cette commande lance le client et le redémarre automatiquement à chaque modification des fichiers
