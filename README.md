@@ -4,7 +4,7 @@ outils requis:
 
   - NodeJS (https://nodejs.org/en/download/)
   - npm (normalement installé en même temps que nodejs)
-  - whampserver (ou tout autre serveur de base de donnée SQL)
+  - wampserver (ou tout autre serveur de database SQL)
 
 après téléchargement du projet:
 
@@ -23,9 +23,9 @@ après téléchargement du projet:
 
   Installe toutes les dépendances nécessaires au projet
 
-  lancer le serveur de base de donnée SQL et créer un compte utilisateur pour l'application ainsi qu'une base de donnée 'projectpuzzle'.
+  lancer le serveur de database SQL et créer un compte utilisateur pour l'application ainsi qu'une base de donnée 'projectpuzzle'.
 
-  ensuite renommer le fichier datasource.exemple en datasource.json.
+  ensuite renommer le fichier datasources.exemple en datasources.json.
 
   modifier 'host' selon l'adresse IP du serveur SQL
 
@@ -47,7 +47,7 @@ pour faire tourner l'application:
 
   lance le serveur
 
-  aller dans le client APRES QUE LE SERVEUR EST DEMMARE
+  aller dans le client APRES QUE LE SERVEUR AIT DEMMARE
   - ng serve
 
   lance le client et le redémarre automatiquement à chaque modification des fichiers
