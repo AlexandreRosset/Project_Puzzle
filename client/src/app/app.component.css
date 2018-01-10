@@ -27,6 +27,17 @@ li.nav-item:last-of-type {
   margin-right: 2%;
 }
 
+#nomAsso {
+  margin-top: -3px;
+  margin-left: 5px;
+  line-height: 75px;
+  font-family: "Comic Sans MS", Comic Sans, cursive;
+}
+
+#nomAsso:hover {
+  color: rgb(248, 248, 248) !important;
+}
+
 .navbar {
   padding: 0;
 }
