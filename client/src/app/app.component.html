@@ -31,24 +31,26 @@
         <span class="fill-remaining-space"></span>
         <ul class="navbar-nav">
           <li *ngIf="!isLoggedIn" class="nav-item dropdown">
-            <a class="btn dropdown-toggle nav-dropdown-btn" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-user-circle-o"></i> Compte
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="signup"><i class="fa fa-user-plus fa-fw"></i> S'inscrire</a>
-              <a class="dropdown-item" href="signin"><i class="fa fa-sign-in fa-fw"></i> Se connecter</a>
-            </div>
-          </li>
-          <li *ngIf="isLoggedIn" class="nav-item dropdown">
-            <a class="btn dropdown-toggle nav-dropdown-btn" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-user-circle-o"></i> Bienvenue, {{username}} !
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out fa-fw"></i> Se déconnecter</a>
-            </div>
-          </li>
+          <div class="btn-group" dropdown is-open="status.isopen">
+            <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled"><i class="fa fa-user-circle-o"></i>
+              Compte <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a class="dropdown-item" href="signup"><i class="fa fa-user-plus fa-fw"></i> S'inscrire</a>
+                <a class="dropdown-item" href="signin"><i class="fa fa-sign-in fa-fw"></i> Se connecter</a>
+              </li>
+              <li *ngIf="isLoggedIn" class="nav-item dropdown">
+                <a class="btn dropdown-toggle nav-dropdown-btn" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user-circle-o"></i> Bienvenue, {{username}} !
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out fa-fw"></i> Se déconnecter</a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </ul>
-
       </div>
     </div>
 
