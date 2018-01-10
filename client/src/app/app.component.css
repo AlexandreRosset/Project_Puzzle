@@ -1,4 +1,44 @@
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 2px;
+}
+
+.nav-item {
+  padding: 5px;
+  border-right: 1px solid rgba(255, 255, 255, .2);
+  line-height: 50px;
+}
+
+li.nav-item:last-of-type {
+  border: none;
+  padding: 5px;
+  line-height: 50px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
 .btn-group:hover>.dropdown-menu {
   display: block;
 }
 
+#logo {
+  margin-right: 2%;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.dropdown {
+  line-height: 75px;
+}
+
+.dropdown-item {
+  line-height: 25px;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(255, 152, 0) !important;
+}

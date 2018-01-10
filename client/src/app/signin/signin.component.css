@@ -36,3 +36,11 @@
   padding-top: calc(( 100vh - 400px ) / 2 );
   padding-bottom: calc(( 100vh - 400px ) / 2 );
 }
+
+#signup {
+  color: #FF9800 !important;
+}
+
+button {
+  cursor: pointer;
+}

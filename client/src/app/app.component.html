@@ -2,21 +2,25 @@
   La navbar en haut de la page
 -->
 <div class="row">
-  <nav class="navbar navbar-toggleable-md fixed-top" >
+  <nav class="navbar navbar-toggleable-md fixed-top">
 
     <div class="col-md-8 col-sm-12 offset-md-2">
-      <img src="./assets/images/LOgo_PP_png.png" height="50px" width="auto">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="home"> Project Puzzle</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand" href="home">
+          <img src="./assets/images/LOgo_PP_png.png" height="75px" width="auto" id="logo">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--<a class="navbar-brand" href="home">Project Puzzle</a>-->
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="home">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="actus" hidden>Actualités</a>
+            <a class="nav-link" href="actus">Actualités</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="projects">Projets</a>
@@ -30,26 +34,28 @@
         </ul>
         <span class="fill-remaining-space"></span>
         <ul class="navbar-nav">
-          <li *ngIf="!isLoggedIn" class="nav-item dropdown">
-          <div class="btn-group" dropdown is-open="status.isopen">
-            <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled"><i class="fa fa-user-circle-o"></i>
-              Compte <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li>
-                <a class="dropdown-item" href="signup"><i class="fa fa-user-plus fa-fw"></i> S'inscrire</a>
-                <a class="dropdown-item" href="signin"><i class="fa fa-sign-in fa-fw"></i> Se connecter</a>
-              </li>
-              <li *ngIf="isLoggedIn" class="nav-item dropdown">
-                <a class="btn dropdown-toggle nav-dropdown-btn" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-user-circle-o"></i> Bienvenue, {{username}} !
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out fa-fw"></i> Se déconnecter</a>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <li *ngIf="!isLoggedIn" class="dropdown">
+            <div class="btn-group" dropdown is-open="status.isopen">
+              <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                <i class="fa fa-user-circle-o"></i>
+                Compte <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a class="dropdown-item" href="signup"><i class="fa fa-user-plus fa-fw"></i> S'inscrire</a>
+                  <a class="dropdown-item" href="signin"><i class="fa fa-sign-in fa-fw"></i> Se connecter</a>
+                </li>
+                <li *ngIf="isLoggedIn" class="dropdown">
+                  <a class="btn dropdown-toggle nav-dropdown-btn" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                     aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle-o"></i> Bienvenue, {{username}} !
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out fa-fw"></i> Se déconnecter</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
         </ul>
       </div>
     </div>
@@ -61,11 +67,11 @@
 <p-growl [value]="msgs"></p-growl>
 
 <div class="row" [style]="{'margin-top':'35px!important'}">
-  <div *ngIf="isLoggedIn" class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar" >
+  <div *ngIf="isLoggedIn" class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
     <p-accordion class="card">
       <p-accordionTab *ngIf="admin" header="Administration">
         <ul class="nav nav-pills flex-column">
-          <li class="nav-item" >
+          <li class="nav-item">
             <a class="nav-link" href="/admin-users">Utilisateurs</a>
           </li>
           <li class="nav-item">
@@ -75,7 +81,7 @@
       </p-accordionTab>
       <p-accordionTab *ngIf="moderator" header="Modération">
         <ul class="nav nav-pills flex-column">
-          <li class="nav-item active" >
+          <li class="nav-item active">
             <a class="nav-link" href="#">Projets</a>
           </li>
           <li class="nav-item">
@@ -83,21 +89,21 @@
       </p-accordionTab>
       <p-accordionTab header="Mon compte">
         <ul class="nav nav-pills flex-column">
-          <li class="nav-item active" >
+          <li class="nav-item active">
             <a class="nav-link" href="my-profile">Mon profil <span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </p-accordionTab>
       <p-accordionTab *ngIf="associations" header="Mes associations">
         <ul class="nav nav-pills flex-column">
-          <li class="nav-item active" >
+          <li class="nav-item active">
             <a class="nav-link" href="#">Overview <span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </p-accordionTab>
       <p-accordionTab header="Mes projets">
         <ul class="nav nav-pills flex-column">
-          <li class="nav-item active" >
+          <li class="nav-item active">
             <a class="nav-link" href="#">Overview <span class="sr-only">(current)</span></a>
           </li>
         </ul>
@@ -128,8 +134,8 @@
                 <span class="text-muted">
                   Partager la plateforme !
                 </span>
-                </div>
-                <div class="col-md-6 col-sm-12">
+              </div>
+              <div class="col-md-6 col-sm-12">
                 <span class="footer-icon">
                   <button class="btn btn-circle">
                     <a class="fa fa-facebook"></a>
