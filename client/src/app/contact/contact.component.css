@@ -32,6 +32,12 @@ form input, form textarea {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   resize: none;
 }
+
+form input, form textarea {
+  -moz-box-shadow: 0 0px 2px rgba(0, 0, 0, .5) !important;
+  -webkit-box-shadow: 0 0px 2px rgba(0, 0, 0, .5) !important;
+  box-shadow: 0 0px 2px rgba(0, 0, 0, .5) !important;
+}
 form input:focus, form textarea:focus {
   -moz-box-shadow: 0 0px 2px #e74c3c !important;
   -webkit-box-shadow: 0 0px 2px #e74c3c !important;

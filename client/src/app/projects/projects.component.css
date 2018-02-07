@@ -29,6 +29,7 @@
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+  color: #000;
 }
 
 .card > img {
@@ -37,4 +38,19 @@
 
 .card-text {
   font-size: 85%;
+}
+
+/* Modal */
+.imageModal {
+  float: left;
+  margin-right: 20px;
+}
+
+.modal-header {
+  color: white;
+  background: #FF9800;
+}
+
+.close {
+  color: white;
 }
