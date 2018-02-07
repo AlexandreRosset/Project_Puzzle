@@ -25,6 +25,24 @@
   height: 32rem;
 }
 
+.carousel-control-next {
+  background: black;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(0,0,0,0.7));
+}
+
+.carousel-control-prev {
+  background: black;
+  background: linear-gradient(to left, rgba(255,255,255,0), rgba(0,0,0,0.7));
+}
+
+.carousel-control-prev-icon {
+  padding: 17px;
+}
+
+.carousel-control-next-icon {
+  padding: 17px;
+}
+
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
