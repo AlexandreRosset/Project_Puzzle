@@ -15,7 +15,7 @@
           Informations de connexion
         </h2>
         <div class=
-          "w3-padding w3-border
+               "p-4 w3-border
           w3-hover-border-orange w3-round-xlarge
           w3-animate-bottom">
           <div [ngClass]="{
@@ -23,8 +23,7 @@
             'has-danger': (!email.valid && !email.pristine) || emailExists,
             'has-success' : email.valid && !emailExists
           }">
-            <div class="col-1"></div>
-            <label for="email" class="col-2 col-form-label">
+            <label for="email" class="col-3 col-form-label text-right">
               Email
             </label>
             <div class="col-8">
@@ -50,15 +49,14 @@
                 class="form-control-feedback">
                 Cet email existe déjà
               </div>
-              <small id="emailHelp" class="form-text text-muted">
+              <small id="emailHelp" class="form-text text-muted collapse">
                 Nous ne la communiquerons à personne sans votre accord.
               </small>
             </div>
           </div>
           <div [ngClass]="{
             'form-group row': true}">
-            <div class="col-1"></div>
-            <label for="password" class="col-2 col-form-label">
+            <label for="password" class="col-3 col-form-label text-right">
               Mot de passe
             </label>
             <div class="col-7">
@@ -75,8 +73,7 @@
             'has-danger': (!username.valid && !username.pristine) || usernameExists,
             'has-success' : !usernameExists && username.valid
             }">
-            <div class="col-1"></div>
-            <label for="username" class="col-2 col-form-label">
+            <label for="username" class="col-3 col-form-label text-right">
               Pseudo
             </label>
             <div class="col-8">
@@ -103,7 +100,7 @@
                 class="form-control-feedback">
                 Ce pseudo existe déjà
               </div>
-              <small id="usernameHelp" class="form-text text-muted">
+              <small id="usernameHelp" class="form-text text-muted collapse">
                 Choisissez un pseudo (4-20 caractères).
               </small>
             </div>
@@ -112,18 +109,17 @@
         <h2>
           Vos informations
         </h2>
-        <small class="form-text text-muted">
+        <small class="form-text text-muted collapse">
           Ces informations sont confidentielles.
         </small>
         <div class=
-          "w3-padding w3-border w3-hover-border-orange
+               "p-4 w3-border w3-hover-border-orange
           w3-round-xlarge w3-animate-bottom">
           <div [ngClass]="{
             'form-group row': true,
             'has-danger': !lastname.valid && !lastname.pristine,
             'has-success' : lastname.valid}">
-            <div class="col-1"></div>
-            <label for="lastname" class="col-2 col-form-label">
+            <label for="lastname" class="col-3 col-form-label text-right">
               Nom de famille
             </label>
             <div class="col-8">
@@ -141,8 +137,7 @@
             'form-group row': true,
             'has-danger': !firstname.valid && !firstname.pristine,
             'has-success' : firstname.valid}">
-            <div class="col-1"></div>
-            <label for="firstname" class="col-2 col-form-label">
+            <label for="firstname" class="col-3 col-form-label text-right">
               Prénom
             </label>
             <div class="col-8">
@@ -160,8 +155,7 @@
             'form-group row': true,
             'has-danger': !phone.valid && !phone.pristine,
             'has-success' : phone.valid}">
-            <div class="col-1"></div>
-            <label for="phone" class="col-2 col-form-label">Télephone</label>
+            <label for="phone" class="col-3 col-form-label text-right">Télephone</label>
             <div class="col-8">
               <div class="input-group">
                 <div class="input-group-addon">
@@ -181,15 +175,14 @@
         <h2>
           Votre profil
         </h2>
-        <small class="form-text text-muted">
+        <small class="form-text text-muted collapse">
           Vos informations publiques.
         </small>
         <div class=
-          "w3-padding w3-border w3-hover-border-orange
+               "p-4 w3-border w3-hover-border-orange
           w3-round-xlarge w3-animate-bottom">
           <div class="form-group row">
-            <div class="col-1"></div>
-            <label for="lastname" class="col-2 col-form-label">
+            <label for="lastname" class="col-3 col-form-label text-right">
               Avatar
             </label>
             <div class="col-8">
@@ -199,8 +192,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <div class="col-1"></div>
-            <label for="lastname" class="col-2 col-form-label">
+            <label for="lastname" class="col-3 col-form-label text-right">
               Description
             </label>
             <div class="col-8">
