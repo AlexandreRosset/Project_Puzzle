@@ -54,3 +54,29 @@
 .close {
   color: white;
 }
+
+i.fa.fa-facebook, i.fa.fa-twitter {
+  border-radius: 100%;
+  font-size: 25px;
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 5px;
+  line-height: 35px;
+  text-align: center;
+  width: 35px;
+}
+
+i.fa.fa-facebook {
+  border: 1px solid #4C68A5;
+  color: #4C68A5;
+}
+
+i.fa.fa-twitter {
+  border: 1px solid #45A1EB;
+  color: #45A1EB;
+}
+
+i.fa.fa-facebook:hover, i.fa.fa-twitter:hover {
+  opacity: .6;
+  cursor: pointer;
+}
