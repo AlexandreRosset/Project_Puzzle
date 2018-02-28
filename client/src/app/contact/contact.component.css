@@ -41,7 +41,7 @@ form input, form textarea {
 form input:focus, form textarea:focus {
   -moz-box-shadow: 0 0px 2px #e74c3c !important;
   -webkit-box-shadow: 0 0px 2px #e74c3c !important;
-  box-shadow: 0 0px 2px #e74c3c !important;
+  box-shadow: 0 0px 2px #5cb3fd !important;
 }
 form #input-submit {
   color: white;
