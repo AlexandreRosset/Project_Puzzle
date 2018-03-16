@@ -1,7 +1,8 @@
 <!--
   La navbar en haut de la page
 -->
-<div class="row" style="margin-bottom: 30px;">
+<!-- navbar non responsive -->
+<div class="row1" style="margin-bottom: 30px;">
   <nav class="navbar navbar-toggleable-md fixed-top">
 
     <div class="col-md-8 col-sm-12 offset-md-2">
@@ -62,10 +63,67 @@
         </ul>
       </div>
     </div>
-
-
   </nav>
 </div>
+
+
+<!-- navbar responsive -->
+<div class="dropdownHide fixed-top">
+  <div class="btn-group btn-block" dropdown is-open="status.isopen">
+    <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" id="oli"><img src="./assets/images/LOgo_PP_png.png" height="75px" width="auto" id="logo"><span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li class="aa">
+        <a class="dropdown-item" href="home">Accueil</a>
+      </li>
+      <li class="aa">
+        <a class="dropdown-item" href="actus">Actualités</a>
+      </li>
+      <li class="aa">
+        <a class="dropdown-item" href="projects">Projets</a>
+      </li>
+      <li class="aa">
+        <a class="dropdown-item" href="">Associations</a>
+      </li>
+      <li class="aa">
+        <a class="dropdown-item" href="contact">Contact</a>
+      </li>
+      <li class="aa">
+        <ul class="sndUl">
+          <li *ngIf="!isLoggedIn" class="dropdown">
+            <div class="btn-group" dropdown is-open="status.isopen">
+              <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                <i class="fa fa-user-circle-o"></i>
+                Compte <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a class="dropdown-item" href="signup"><i class="fa fa-user-plus fa-fw"></i> S'inscrire</a>
+                  <a class="dropdown-item" href="signin"><i class="fa fa-sign-in fa-fw"></i> Se connecter</a>
+                </li>
+              </ul>
+            </div>
+          <li *ngIf="isLoggedIn" class="dropdown">
+            <div class="btn-group" dropdown is-open="status.isopen">
+              <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                <span><i class="fa fa-user-circle-o"></i>{{username}}</span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out fa-fw"></i> Se déconnecter</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
 
 <p-growl [value]="msgs"></p-growl>
 

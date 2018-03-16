@@ -54,6 +54,49 @@ li.nav-item:last-of-type {
   background-color: rgb(255, 152, 0) !important;
 }
 
+
+.dropdownHide {
+  visibility: hidden;
+  text-align: center;
+  height: auto;
+}
+
+.row1 {
+  margin-top: 130px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .dropdownHide {
+    visibility: visible;
+  }
+
+  .row1 {
+    visibility: hidden;
+  }
+
+  #oli {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .aa {
+    text-align: center;
+  }
+
+  .dropdown-item:hover {
+    color: white !important;
+  }
+
+  .sndUl {
+    list-style-type: none;
+  }
+
+}
+
+
 .social-icons {
   list-style-type: none;
   margin: auto;
