@@ -51,10 +51,16 @@ export class UsersService {
       '?access_token='+
       this.Auth.getAccessToken();
     return this.http.post(route, body, {headers : headers})
-      .map((response: Response) => {
-          return response;
-      })
+      .map(res => res.json())
       .catch(this.Auth.handleError);
   }
 
+  getUsers(){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let routeUsers = 'http://localhost:3000/api/users';
+    return this.http.get(routeUsers, {headers : headers})
+      .map((response: Response) => response)
+      .catch(this.Auth.handleError);
+  }
 }

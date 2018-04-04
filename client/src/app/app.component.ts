@@ -2,12 +2,17 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthenticationService } from './authentication.service';
 import { GrowlMessagesService } from './growl-messages.service';
+import {UsersService} from "./users.service";
+import {ProjectsService} from "./projects.service";
+import {User} from "./user";
+import {Project} from "./project";
 
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [UsersService, ProjectsService]
 })
 export class AppComponent implements OnInit {
   title = 'app works!';
@@ -24,9 +29,21 @@ export class AppComponent implements OnInit {
   admin = false;
   moderator = false;
 
+  // Liste de tous les users de la BD
+  users;
+  // Objet User
+  User = User;
+
+  // Liste de tous les projets de la BD
+  projects;
+  // Objet Project
+  Project = Project;
+
   constructor(
     private AuthService: AuthenticationService,
-    private GrowlService: GrowlMessagesService
+    private GrowlService: GrowlMessagesService,
+    private userService: UsersService,
+    private projectService: ProjectsService
   )
   {
     let that = this;
@@ -53,6 +70,22 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.getUserInfo(undefined);
+    this.getUsers();
+    this.getProjects();
+  }
+
+  getUsers() {
+    console.log("Getting users");
+    this.userService.getUsers().subscribe(({ _body }) => {
+      this.users = JSON.parse(_body);
+    });
+  }
+
+  getProjects() {
+    console.log("Getting projects");
+    this.projectService.getProjects().subscribe(({ _body }) => {
+      this.projects = JSON.parse(_body);
+    });
   }
 
   getUserInfo(user){

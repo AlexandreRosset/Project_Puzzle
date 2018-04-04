@@ -2,22 +2,17 @@
   <div class="container">
     <h1 class="jumbotron-heading">Les projets</h1>
     <p class="lead text-muted">Découvrez tous les projets créés par nos associations partenaires.</p>
-    <p>
-      <a href="#" class="btn btn-primary">Main call to action</a>
-      <a href="#" class="btn btn-secondary">Secondary action</a>
-    </p>
   </div>
 </section>
 
 <div class="album text-muted">
   <div class="container">
 
-    <div class="row">
+    <div class="row" *ngFor="let project of projects">
       <div class="card">
-        <img src="./assets/images/PICT0032_3_2.JPG" height="200px" width="auto" alt="Card image cap">
-        <h2>Hamada</h2>
-        <p class="card-text">Hamada aide à la scolarisation des enfants du sud marocain par l’apport de fournitures
-          scolaires, vêtements, cartables, livres scolaires.</p>
+        <img src="{{project.image}}" height="200px" width="auto" alt="Card image cap">
+        <h2>{{project.title}}</h2>
+        <p class="card-text">{{project.resume}}</p>
 
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -29,7 +24,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <!-- Nom du projet -->
-                <h1 class="modal-title">Hamada</h1>
+                <h1 class="modal-title">{{project.title}}</h1>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -37,63 +32,31 @@
 
               <!-- Rappel du projet -->
               <div class="modal-body">
-                <img src="./assets/images/PICT0032_3_2.JPG" class="imageModal"
+                <img src="{{project.image}}" class="imageModal"
                      height="200px" width="auto" alt="Card image cap">
-                <p>
-                  Hamada aide à la scolarisation des enfants du sud marocain par l’apport de fournitures scolaires,
-                  vêtements, cartables, livres scolaires. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aperiam consequuntur deleniti fuga ipsa quas similique? Autem dolore maiores neque odio quas
-                  reprehenderit sapiente? Aut minus officiis placeat quas rerum? Et. Lorem ipsum dolor sit amet,
-                  consectetur adipisicing elit. Culpa cum cupiditate doloremque dolores dolorum inventore nesciunt nulla
-                  perferendis repellat similique temporibus, totam unde! Adipisci deleniti minima nemo quod sunt
-                  suscipit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt distinctio dolor
-                  eligendi eveniet, laborum nesciunt omnis, porro quaerat quas sint tenetur ullam, voluptatem. Fugiat
-                  numquam quos rerum similique tenetur!
-                </p>
+                <p>{{project.presentation}}</p>
               </div>
-
 
               <!-- Détails du projet -->
               <div class="modal-body">
                 <h2>Détails</h2>
                 <hr class="featurette-divider">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, omnis quidem. Aut et facilis ipsum
-                  repellat sequi. Ab accusamus autem beatae distinctio esse impedit laboriosam nihil numquam odit
-                  quisquam, similique. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores
-                  aspernatur aut blanditiis enim eveniet laborum, minus nemo omnis perferendis placeat provident quod
-                  saepe sunt tempora temporibus totam ullam veniam!
-                </p>
+                <ul style="text-decoration-line: none">
+                  <li>Résumé : {{project.resume}}</li>
+                  <li>Date de création : {{project.date | date : "dd/MM/y"}}</li>
+                  <li>Lieu : {{project.place}}</li>
+                  <li>Contact : {{project.contactmail}}</li>
+                </ul>
               </div>
               <div class="modal-footer">
-                <!-- TODO: Mettre le lien vers le projet en question-->
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Aller sur la page du projet</button>
+                <a href="{{project.fblink}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="{{project.twtlink}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a class="btn btn-primary" href="{{project.googlelink}}" target="_blank">Aller sur la page du projet</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="./assets/images/090722131936.jpg" height="200px" width="auto" alt="Card image cap">
-        <h2>Un abri pour tous</h2>
-        <p class="card-text">Aider à la construction d'abris pour les populations autochtones d'Afrique centrale.</p>
-      </div>
-      <div class="card">
-        <img src="./assets/images/770392-pour-oxfam-principal-defi-fournir.jpg" height="200px" width="auto"
-             alt="Card image cap">
-        <h2>Nourrir les camerounais</h2>
-        <p class="card-text">Apporter l'eau potable et de la nourriture de manière viable et durable à des enfants
-          camerounais.</p>
-      </div>
-
-      <div class="card">
-        <img src="./assets/images/Banka.jpg" height="200px" width="auto" alt="Card image cap">
-        <h2>Haut Nkam Nshu Shu:</h2>
-        <p class="card-text">Restaurer un réseau d'eau construit il y a 50 ans pour redonner un accès à l'eau potable
-          aux habitants de Banka.</p>
       </div>
     </div>
 
