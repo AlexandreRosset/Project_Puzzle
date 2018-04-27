@@ -282,3 +282,12 @@ li.nav-item:last-of-type {
   /* ...and now for the proper property */
   transition:.5s;
 }
+
+#cgu {
+  text-decoration-line: underline;
+  color: #ffffff !important;
+}
+
+#cgu :hover {
+  color: #ffffff !important;
+}

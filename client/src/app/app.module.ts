@@ -36,6 +36,7 @@ import { FailedAuthComponent } from './failed-auth/failed-auth.component';
 import { AssociationCreateComponent } from './association-create/association-create.component';
 import { ComfirmDialogComponent } from './comfirm-dialog/comfirm-dialog.component';
 import { AddAssMemberDialogComponent } from './add-ass-member-dialog/add-ass-member-dialog.component';
+import { CguComponent } from './cgu/cgu.component';
 
 
 //Déclaration du module
@@ -59,7 +60,8 @@ import { AddAssMemberDialogComponent } from './add-ass-member-dialog/add-ass-mem
     FailedAuthComponent,
     AssociationCreateComponent,
     ComfirmDialogComponent,
-    AddAssMemberDialogComponent
+    AddAssMemberDialogComponent,
+    CguComponent
   ],
   imports: [
     BrowserModule,

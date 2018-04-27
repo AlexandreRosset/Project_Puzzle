@@ -16,6 +16,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminAssociationsComponent } from './admin-associations/admin-associations.component';
 import { FailedAuthComponent } from './failed-auth/failed-auth.component';
 import { AssociationCreateComponent } from './association-create/association-create.component';
+import {CguComponent} from "./cgu/cgu.component";
 
 //Gestion des routes et des redirections
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'cgu', component: CguComponent },
   { path: 'project-create', component: ProjectCreateComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'actus', component: ActusComponent },
